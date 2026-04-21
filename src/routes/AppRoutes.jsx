@@ -3,6 +3,7 @@ import Login from "../pages/Login";
 import Products from "../pages/Products";
 import Stock from "../pages/Stock";
 import Promotions from "../pages/Promotions";
+import Dashboard from "../pages/Dashboard";
 import Layout from "../components/Layout";
 
 function PrivateRoute({ children }) {
@@ -24,9 +25,7 @@ export default function AppRoutes() {
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/dashboard" element={
-          <PrivateLayout>
-            <p className="text-stone-400 text-sm">Dashboard em construção 🚧</p>
-          </PrivateLayout>
+          <PrivateLayout><Dashboard /></PrivateLayout>
         } />
         <Route path="/products" element={
           <PrivateLayout><Products /></PrivateLayout>
