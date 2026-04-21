@@ -5,6 +5,7 @@ import Stock from "../pages/Stock";
 import Promotions from "../pages/Promotions";
 import Dashboard from "../pages/Dashboard";
 import Layout from "../components/Layout";
+import Admin from "../pages/Admin";
 
 function PrivateRoute({ children }) {
   const token = localStorage.getItem("token");
@@ -24,18 +25,46 @@ export default function AppRoutes() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Login />} />
-        <Route path="/dashboard" element={
-          <PrivateLayout><Dashboard /></PrivateLayout>
-        } />
-        <Route path="/products" element={
-          <PrivateLayout><Products /></PrivateLayout>
-        } />
-        <Route path="/stock" element={
-          <PrivateLayout><Stock /></PrivateLayout>
-        } />
-        <Route path="/promotions" element={
-          <PrivateLayout><Promotions /></PrivateLayout>
-        } />
+        <Route
+          path="/dashboard"
+          element={
+            <PrivateLayout>
+              <Dashboard />
+            </PrivateLayout>
+          }
+        />
+        <Route
+          path="/products"
+          element={
+            <PrivateLayout>
+              <Products />
+            </PrivateLayout>
+          }
+        />
+        <Route
+          path="/stock"
+          element={
+            <PrivateLayout>
+              <Stock />
+            </PrivateLayout>
+          }
+        />
+        <Route
+          path="/promotions"
+          element={
+            <PrivateLayout>
+              <Promotions />
+            </PrivateLayout>
+          }
+        />
+        <Route
+          path="/admin"
+          element={
+            <PrivateLayout>
+              <Admin />
+            </PrivateLayout>
+          }
+        />
       </Routes>
     </BrowserRouter>
   );

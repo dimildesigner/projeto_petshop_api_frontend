@@ -1,7 +1,9 @@
 import axios from "axios";
 
 export const api = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || "https://projeto-petshop-api-backend.onrender.com"
+  baseURL:
+    import.meta.env.VITE_API_URL ||
+    "https://projeto-petshop-api-backend.onrender.com",
 });
 
 api.interceptors.request.use((config) => {
